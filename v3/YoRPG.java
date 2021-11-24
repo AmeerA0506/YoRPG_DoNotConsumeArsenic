@@ -19,76 +19,8 @@
 import java.io.*;
 import java.util.*;
 
-class Character{
-  int HP;
-  int strength;
-  int defense;
-  double attack;
 
-}
-class Protagonist extends Character{
-  String name;
-  int HP=50;
-  boolean special=false;
 
-  public Protagonist(String name){
-    this.name=name;
-  }
-  public String getName(){
-    return name;
-  }
-  public int attack(Monster monster){
-
-    int damage=0;
-    if (special){
-    damage=(int)(Math.random()*20);
-  }
-  else{
-    damage=(int)(Math.random()*10+15);
-  }
-  monster.HP-=damage;
-    return damage;
-  }
-  public void normalize(){
-    special=false;
-  }
-  public void specialize(){
-    special=true;
-  }
-  public boolean getSpecial(){
-    return special;
-  }
-  public boolean isAlive(){
-    boolean retBoo=true;
-    if(HP<=0){
-      retBoo = false;
-    }
-    return retBoo;
-  }
-}
-class Monster extends Character{
-  int HP=25;
-  public int attack(Protagonist pro){
-    int damage=0;
-    if (pro.special==true){
-        damage=(int)(Math.random()*10);
-        pro.HP-=damage;
-    }
-    else{
-      damage=(int)(Math.random()*5 +5);
-      pro.HP-=damage;
-
-    }
-    return damage;
-  }
-  public boolean isAlive(){
-    boolean retBoo=true;
-    if(HP<=0){
-      retBoo= false;
-    }
-    return retBoo;
-  }
-}
 public class YoRPG {
 
   // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~

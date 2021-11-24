@@ -5,6 +5,7 @@ public class Monster extends Character {
     damage = 0;
   }
 
+
   public int attack ( Protagonist pro ) {
     if ( pro.special == true){
         damage = (int)(Math.random()*10);

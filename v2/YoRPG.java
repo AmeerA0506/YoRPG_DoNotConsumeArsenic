@@ -96,6 +96,8 @@ public class YoRPG {
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int htype;
+
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -127,19 +129,8 @@ public class YoRPG {
     String name = "";
     s = "~~~ Welcome to Ye Olde RPG! ~~~\n";
 
-    s += "\nChoose your difficulty: \n";
-    s += "\t1: Easy\n";
-    s += "\t2: Not so easy\n";
-    s += "\t3: Beowulf hath nothing on me. Bring it on.\n";
-    s += "Selection: ";
-    System.out.print( s );
 
-    try {
-	    difficulty = Integer.parseInt( in.readLine() );
-    }
-    catch ( IOException e ) { }
-
-    s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
+    s += "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
     try {
@@ -148,32 +139,43 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     pat = new Protagonist( name );
-
-    s = "Fantastic! " + name + ", what role shall thy play?: ";
-    s += "\t1: Warrior\n";
-    s += "\t2: Archer\n";
-    s += "\t3: Healer\n";
-    s += "\t4: Tank\n";
+    //
+    // s = "Fantastic! " + name + ", what role shall thy play? \n";
+    // s += "\t1: Warrior\n";
+    // s += "\t2: Archer\n";
+    // s += "\t3: Healer\n";
+    // s += "\t4: Tank\n";
+    // s += "Selection: ";
+    // System.out.println( s );
+    //
+    // try {
+    //   htype = Integer.parseInt( in.readLine() );
+    // }
+    // catch ( IOException e ) { }
+    //
+    // if (htype == 1) {
+    // Protagonist pat = new Warrior (  );
+    // }
+    // else if (htype == 2) {
+    // Protagonist pat = new Archer(  );
+    // }
+    // else if (htype == 3) {
+    // Protagonist pat = new Healer(  );
+    // }
+    // else{
+    // Protagonist pat = new Tank(  );
+    // }
+    s += "\nChoose your difficulty: \n";
+    s += "\t1: Easy\n";
+    s += "\t2: Not so easy\n";
+    s += "\t3: Beowulf hath nothing on me. Bring it on.\n";
     s += "Selection: ";
-    System.out.println( s );
+    System.out.print( s );
 
     try {
-      htype = Integer.parseInt( in.readLine() );
+      difficulty = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
-
-    if (htype == 1) {
-      pat = new Warrior ( name );
-    }
-    else if (htype == 2) {
-      pat = new Archer( name );
-    }
-    else if (htype == 3) {
-      pat = new Healer( name );
-    }
-    else{
-      pat = new Tank( name );
-    }
 
   }//end newGame()
 

@@ -1,3 +1,7 @@
+/TNPG: (Do Not) Consume Arsenic: Corina Chen edition
+//APCS
+//11/18/2021
+
 /**********************************************
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
@@ -11,85 +15,17 @@
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
  *
  * DISCO:
- *
+ * - Upon first running without moving down the comment bar, there are errors in regards to Protagonist and Monster
+ * - Upon further testing, the 4 errors that resort is in regards to Protagonist and Monster and how the symbol cannot be found.
  * QCC:
- *
+ * - Is Protagonist, Monster, InputStreamReader, and BufferedReader objects? If not, then what are they supposed to be? Is it possible
+     that they are from another class?
  **********************************************/
 
 import java.io.*;
 import java.util.*;
 
-class Character{
-  int HP;
-  int strength;
-  int defense;
-  double attack;
-
-}
-class Protagonist extends Character{
-  String name;
-  int HP=50;
-  boolean special=false;
-
-  public Protagonist(String name){
-    this.name=name;
-  }
-  public String getName(){
-    return name;
-  }
-  public int attack(Monster monster){
-
-    int damage=0;
-    if (special){
-    damage=(int)(Math.random()*20);
-  }
-  else{
-    damage=(int)(Math.random()*10+15);
-  }
-  monster.HP-=damage;
-    return damage;
-  }
-  public void normalize(){
-    special=false;
-  }
-  public void specialize(){
-    special=true;
-  }
-  public boolean getSpecial(){
-    return special;
-  }
-  public boolean isAlive(){
-    boolean retBoo=true;
-    if(HP<=0){
-      retBoo = false;
-    }
-    return retBoo;
-  }
-}
-class Monster extends Character{
-  int HP=25;
-  public int attack(Protagonist pro){
-    int damage=0;
-    if (pro.special==true){
-        damage=(int)(Math.random()*10);
-        pro.HP-=damage;
-    }
-    else{
-      damage=(int)(Math.random()*5 +5);
-      pro.HP-=damage;
-
-    }
-    return damage;
-  }
-  public boolean isAlive(){
-    boolean retBoo=true;
-    if(HP<=0){
-      retBoo= false;
-    }
-    return retBoo;
-  }
-}
-public class YoRPG {
+public class YoRPG-c {
 
   // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
 
@@ -230,7 +166,10 @@ public class YoRPG {
 
 
   public static void main( String[] args ) {
+    //As usual, move the begin-comment bar down as you progressively
+    //test each new bit of functionality...
 
+    //loading...
     YoRPG game = new YoRPG();
     int encounters = 0;
     while( encounters < MAX_ENCOUNTERS ) {
@@ -240,7 +179,8 @@ public class YoRPG {
     System.out.println();
     }
     System.out.println( "Thy game doth be over." );
-
+    /*================================================
+	  ================================================*/
   }//end main
 
 }//end class YoRPG
