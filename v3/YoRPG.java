@@ -35,6 +35,7 @@ public class YoRPG {
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int hType;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -87,7 +88,34 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Protagonist( name );
+    //pat = new Protagonist( name );
+
+
+    s = "Fantastic! " + name + ", what role shall thy play? \n";
+    s += "\t1: Warrior\n";
+    s += "\t2: Archer\n";
+    s += "\t3: Healer\n";
+    s += "\t4: Tank\n";
+    s += "Selection: ";
+    System.out.println( s );
+
+    try {
+      hType = Integer.parseInt( in.readLine() );
+    }
+    catch ( IOException e ) { }
+
+    if (hType == 1) {
+    Protagonist pat = new Warrior (  );
+    }
+    else if (hType == 2) {
+    Protagonist pat = new Archer(  );
+    }
+    else if (hType == 3) {
+    Protagonist pat = new Healer(  );
+    }
+    else{
+    Protagonist pat = new Tank(  );
+  }
 
   }//end newGame()
 
