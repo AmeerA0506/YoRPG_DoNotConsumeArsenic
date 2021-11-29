@@ -1,33 +1,29 @@
 public class Protagonist extends Character {
-  String name;
-  int HP = 50;
-  boolean special = false;
+    private String _name;
 
-  public Protagonist( String name ) {
-    this.name = name;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void normalize() {
-    special = false;
-  }
-
-  public void specialize() {
-    special = true;
-  }
-
-  public boolean getSpecial() {
-    return special;
-  }
-  public boolean isAlive() {
-    boolean retBoo = true;
-    if (HP <= 0) {
-      retBoo = false;
+    public Protagonist() {
+        _hitPts = 125;
+        _strength = 100;
+        _defense = 40;
+        _attack = .4;
     }
-    return retBoo;
-  }
 
+    public Protagonist(String name) {
+        this();
+        _name = name;
+    }
+
+    public void specialize() {
+        _attack = .75;
+        _defense = 20;
+    }
+
+    public void normalize() {
+        _attack = .4;
+        _defense = 40;
+    }
+
+    public String getName() {
+        return _name;
+    }
 }

@@ -139,32 +139,40 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     pat = new Protagonist( name );
-    //
-    // s = "Fantastic! " + name + ", what role shall thy play? \n";
-    // s += "\t1: Warrior\n";
-    // s += "\t2: Archer\n";
-    // s += "\t3: Healer\n";
-    // s += "\t4: Tank\n";
-    // s += "Selection: ";
-    // System.out.println( s );
-    //
-    // try {
-    //   htype = Integer.parseInt( in.readLine() );
-    // }
-    // catch ( IOException e ) { }
-    //
-    // if (htype == 1) {
-    // Protagonist pat = new Warrior (  );
-    // }
-    // else if (htype == 2) {
-    // Protagonist pat = new Archer(  );
-    // }
-    // else if (htype == 3) {
-    // Protagonist pat = new Healer(  );
-    // }
-    // else{
-    // Protagonist pat = new Tank(  );
-    // }
+
+    s = "Fantastic! " + name + ", what role shall thy play? \n";
+    s += "\t1: Warrior\n";
+    s += "\t2: Tank\n";
+    s += "\t3: Healer\n";
+    s += "Selection: ";
+    System.out.println( s );
+
+    try {
+      htype = Integer.parseInt( in.readLine() );
+    }
+    catch ( IOException e ) { }
+
+    if (htype == 1) {
+    Protagonist pat = new Warrior ();
+    }
+    else if (htype == 2) {
+    Protagonist pat = new Tank();
+    }
+    else if (htype == 3) {
+    Protagonist pat = new Healer();
+    }
+    else{
+    int val=(int)(Math.random()*3);
+    if (val <= 1) {
+    Protagonist pat = new Warrior ();
+    }
+    else if (val == 2) {
+    Protagonist pat = new Tank();
+    }
+    else if (val == 3) {
+    Protagonist pat = new Healer();
+    }
+    }
     s += "\nChoose your difficulty: \n";
     s += "\t1: Easy\n";
     s += "\t2: Not so easy\n";

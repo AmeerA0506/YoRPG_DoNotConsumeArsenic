@@ -1,49 +1,95 @@
 public class Protagonist extends Character {
-   String name;
-  // boolean special = false;
 
-  public Protagonist() {
-    health = 50;
-    special = false;
-    damage = 0;
-  }
+      // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
+      protected String _name = "J. Doe";
+      protected int _hitPts;
+      protected int _strength;
+      protected int _defense;
+      protected double _attack;
+      // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  public Protagonist ( String name ) {
-    this.name = name;
-  }
 
-  public String getName() {
-    return name;
-  }
+      /**
+        default constructor
+        pre:  instance vars are declared
+        post: initializes instance vars.
+        **/
+      public Protagonist() {
+          _hitPts = 125;
+          _strength = 150;
+          _defense = 40;
+          _attack = .4;
+      }
 
-  public int attack ( Monster monster ) {
-    if (special) {
-      damage = (int)(Math.random()*15);
-    }
-    else{
-      damage = (int)(Math.random()*10+10);
-    }
-    monster.minHP( damage );
-    return damage;
-  }
 
-  public void normalize() {
-    special = false;
-  }
+      /**
+        overloaded constructor
+        pre:  instance vars are declared
+        post: initializes instance vars. _name is set to input String.
+        **/
+      public Protagonist( String name ) {
+          this();
+          _name = name;
+      }
 
-  public void specialize() {
-    special = true;
-  }
 
-  public boolean getSpecial() {
-    return special;
-  }
+      // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
+      public String getName() { return _name; }
 
-  public boolean isAlive(){
-    boolean retBoo = true;
-    if ( health <= 0 ) {
-      retBoo = false;
-    }
-    return retBoo;
-  }
-}
+      public int getDefense() { return _defense; }
+      // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+      /**
+        boolean isAlive() -- tell whether I am alive
+        post: returns boolean indicated alive or dead
+        **/
+      public boolean isAlive() {
+          return _hitPts > 0;
+      }
+
+
+      /**
+        int attack(Monster) -- simulates attack on a Monster
+        pre:  Input not null
+        post: Calculates damage to be inflicted, flooring at 0.
+        Calls opponent's lowerHP() method to inflict damage.
+        Returns damage dealt.
+        **/
+      public int attack( Monster opponent ) {
+
+          int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+          //System.out.println( "\t\t**DIAG** damage: " + damage );
+
+          if ( damage < 0 )
+              damage = 0;
+
+          opponent.lowerHP( damage );
+
+          return damage;
+      }//end attack
+
+
+      /**
+        void lowerHP(int) -- lowers life by input value
+        pre:  Input >= 0
+        post: Life instance var is lowered by input ammount.
+        **/
+      public void lowerHP( int damageInflicted ) {
+          _hitPts = _hitPts - damageInflicted;
+      }
+
+
+      //prepare a Protagonist for a special attack
+      public void specialize() {
+          _attack = .75;
+          _defense = 20;
+      }
+
+      //revert to normal mode
+      public void normalize() {
+          _attack = .4;
+          _defense = 40;
+      }
+
+  }//end class Protagonist

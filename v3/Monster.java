@@ -1,10 +1,8 @@
 public class Monster extends Character {
-  int HP = 25;
-  public boolean isAlive() {
-    boolean retBoo = true;
-    if (HP <= 0) {
-      retBoo = false;
+    public Monster() {
+        _hitPts = 150;
+        _strength = 20 + (int) (Math.random() * 45);
+        _defense = 20;
+        _attack = 1;
     }
-    return retBoo;
-  }
 }

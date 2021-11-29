@@ -1,23 +1,30 @@
 public class Character {
-  int HP;
-  boolean special;
-  int damage;
+  protected int _hitPts;
+  protected int _strength;
+  protected int _defense;
+  protected double _attack;
 
-  public int attack( Character name ) {
-    if ( name.special ) {
-      damage = ( int )( Math.random() * 15 );
-    }
-    else {
-      damage = ( int )( Math.random() * 10 + 10 );
-    }
-    name.HP -= damage;
+  public boolean isAlive() {
+    return _hitPts > 0;
+  }
+
+  public int getDefense() {
+    return _defense;
+  }
+
+  public void lowerHP(int damage) {
+    if (damage<0){
+    _hitPts = _hitPts- damage;
+  }
+}
+  public int attack(Character name) {
+    int damage = (int)( (_strength * _attack) - name.getDefense() );
+
+    name.lowerHP(damage);
     return damage;
   }
-  // public boolean isAlive() {
-  //   boolean retBoo = true;
-  //   if (HP <= 0) {
-  //     retBoo = false;
-  //   }
-  //   return retBoo;
-  // }
+
+  public int getHealth() {
+    return _hitPts;
+  }
 }
