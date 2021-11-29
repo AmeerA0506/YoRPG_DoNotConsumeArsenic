@@ -11,77 +11,17 @@
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
  *
  * DISCO:
- *
+ * There are many difficulties in using the character superclass and superclasses in general personally.
+ * I found it easy to work with constructors to set up the subclasses for Healer/Wizard/Tank 
  * QCC:
- *
+ * Is there a specific feature in order to clear what gets printed out after a selection has been made? 
+*  We were unable to officially finish this lab as the healer's feature as well as the monster subclasses were not made. Also we attempted to override the strength for every attack so there was a hint of randomness and couldn't find out how to
+
  **********************************************/
 
 import java.io.*;
 import java.util.*;
 
-// class Protagonist{
-//   String name;
-//   int HP=50;
-//   boolean special=false;
-//
-//   public Protagonist(String name){
-//     this.name=name;
-//   }
-//   public String getName(){
-//     return name;
-//   }
-//   public int attack(Monster monster){
-//
-//     int damage=0;
-//     if (special){
-//     damage=(int)(Math.random()*15);
-//   }
-//   else{
-//     damage=(int)(Math.random()*10+10);
-//   }
-//   monster.HP-=damage;
-//     return damage;
-//   }
-//   public void normalize(){
-//     special=false;
-//   }
-//   public void specialize(){
-//     special=true;
-//   }
-//   public boolean getSpecial(){
-//     return special;
-//   }
-//   public boolean isAlive(){
-//     boolean retBoo=true;
-//     if(HP<=0){
-//       retBoo = false;
-//     }
-//     return retBoo;
-//   }
-// }
-// class Monster{
-//   int HP=25;
-//   public int attack(Protagonist pro){
-//     int damage=0;
-//     if (pro.special==true){
-//         damage=(int)(Math.random()*10);
-//         pro.HP-=damage;
-//     }
-//     else{
-//       damage=(int)(Math.random()*5 +5);
-//       pro.HP-=damage;
-//
-//     }
-//     return damage;
-//   }
-//   public boolean isAlive(){
-//     boolean retBoo=true;
-//     if(HP<=0){
-//       retBoo= false;
-//     }
-//     return retBoo;
-//   }
-// }
 public class YoRPG {
 
   // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
