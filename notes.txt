@@ -1,1 +1,18 @@
-
+/*****************************************************
+ * (Do not) Consume Arsenic:: Ameer Alnasser,Corina Chen
+ * APCS pd06
+ * Lab01-- YoRPG
+ * 2021-11-29
+ *
+ * DISCO:
+ * There are many difficulties in using the character superclass and superclasses in general personally.
+ * I found it easy to work with constructors to set up the subclasses for Healer/Wizard/Tank 
+ * QCC:
+ * Is there a specific feature in order to clear what gets printed out after a selection has been made? 
+*  We were unable to officially finish this lab as the healer's feature as well as the monster subclasses were not made. Also we attempted to override the strength for every attack so there was a hint of randomness and couldn't find out how to
+ *****************************************************/
+v0: just the YoRPG code and disco/qcc pertaining it
+v1: has a protagonist and monster class exclusively, works as intended
+v2: used to be where Character was created and tinkered with, then accidentally overriden by v4
+v3: Added the subclasses to no avail
+v4: attempted to connect everything together, achieved compilability and functionality of 2 protagonist classes
