@@ -1,0 +1,4 @@
+DISCOS: 
+- this() is only necessary for an overloaded constructor where it needs the stated info in the default constructor
+
+QCC:
