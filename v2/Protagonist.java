@@ -1,6 +1,6 @@
 public class Protagonist extends Character {
 
-  private String name;
+  protected String name;
 
   public Protagonist() {
     name = "_";

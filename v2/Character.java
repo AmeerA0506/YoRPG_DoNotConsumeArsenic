@@ -8,6 +8,10 @@ public class Character {
     return defenseFactor;
   }
 
+  public int getHP() {
+    return hP;
+  }
+
   public boolean isAlive() {
     return hP > 0;
   }

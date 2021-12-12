@@ -1,4 +1,5 @@
 DISCOS: 
 - this() is only necessary for an overloaded constructor where it needs the stated info in the default constructor
+- super() calls for the inheritance of mother class
 
 QCC:

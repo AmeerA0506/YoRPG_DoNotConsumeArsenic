@@ -70,6 +70,8 @@ public class YoRPG {
     s += "\n";
     s += "\t1: Ah! A default hero. \n";
     s += "\t2: Warrior: " + Warrior.about() + "\n";
+    s += "\t3: Healer: " + Healer.about() + "\n";
+    s += "\t4: Tank: " + Tank.about() + "\n";
 
     s += "Your selection, O' Great Traveller?";
 
@@ -85,8 +87,14 @@ public class YoRPG {
     if ( choice == 1 ) {
       pat = new Protagonist ( name );
     }
-    else {
+    else if ( choice == 2 ) {
       pat = new Warrior ( name );
+    }
+    else if ( choice == 3 ) {
+      pat = new Healer ( name );
+    }
+    else {
+      pat = new Tank ( name );
     }
 
     //pat = new Protagonist ( name );
