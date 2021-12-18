@@ -1,4 +1,5 @@
 public class Character {
+  
   protected int hP;
   protected int strengthFactor;
   protected int defenseFactor;

@@ -19,7 +19,7 @@ public class Protagonist extends Character {
     return name;
   }
 
-  public void specialize() {
+  public void specialize ( ) {
     attackFactor = 0.75;
     defenseFactor = 20;
   }

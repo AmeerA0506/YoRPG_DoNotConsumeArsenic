@@ -6,7 +6,7 @@ public class Warrior extends Protagonist {
   }
 
   public Warrior( String name ) {
-    super( name );
+    super ( name );
     strengthFactor = 150;
     defenseFactor = 30;
   }
